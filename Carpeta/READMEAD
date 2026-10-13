@@ -1,1 +1,28 @@
 
+1. Instalamos Python
+https://www.python.org/downloads/.
+
+2. Realizamos la inspeaccion de la version que tenemos, en la terminal ejecutamos el siguiente comando  
+python --version.
+
+2. Si nos aparece la version 3.15.0 vamos a instalar la version 3.13 ejecuamos el siguiente comando  
+py install 3.13.
+
+3. Verificamos la version en la terminal  
+py -3.13 --version
+
+3. 1. Revisa qué versiones tienes instaladas
+py --list
+
+4. Crea el entorno virtual con esa versión desde la carpeta 
+py -3.13 -m venv venv
+venv\Scripts\activate
+pip install fastapi uvicorn jinja2 sqlalchemy pandas openpyxl python-multipart
+
+4.1. Crea las carpetas y archivos
+New-Item -ItemType Directory -Force -Path app\templates, migracion
+New-Item -ItemType File -Force -Path app\__init__.py, app\main.py, app\templates\inicio.html
+
+5. Ejecuta el servidor
+uvicorn app.main:app --reload
+
